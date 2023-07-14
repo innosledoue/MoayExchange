@@ -111,6 +111,7 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
+  background: rgba(254, 198, 15, 31);
 }
 
 #header.header-scrolled,
@@ -144,6 +145,7 @@ h6 {
 */
 .navbar {
   padding: 0;
+  background: rgba(254, 198, 15, 31);
 }
 
 .navbar ul {
