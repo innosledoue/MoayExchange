@@ -1,6 +1,6 @@
 # MoayExchange
 
-Projet EXchange CryptoMonnaie
+Projet Exchange CryptoMonnaie.
 MOAYE EXCHANGE sera l’échangeur décentralisé local 100% automatique qui va se chargera de faire les échanges des crypto monnaies avec les mobiles money local quelques soit le pays dans toute l’Afrique francophone.
 Par un système de parrainage nous allons attirer plus de visiteurs sur notre exchange décentralisé « MOAYE EXCHANGE ».
 Nous allons aussi générer de la liquidité par staking ou farming et les récompense seront payé avec le jeton « BROBROCOIN » qui sera déjà disponible sur les exchanges comme pancekswap ; uniswap et autres… 
