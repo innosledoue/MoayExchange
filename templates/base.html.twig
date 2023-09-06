@@ -43,7 +43,11 @@
     </head>
     <body>
         {% include "_partiels/_header.html.twig" %}
+
+        {% include "_partiels/_flash.html.twig" %}
+        
         {% block body %}{% endblock %}
+        
         {% include "_partiels/_footer.html.twig" %}
         
     </body>

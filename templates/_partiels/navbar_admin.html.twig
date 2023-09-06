@@ -1,0 +1,50 @@
+<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <aside class="left-sidebar" data-sidebarbg="skin6">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <!-- User Profile-->
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                            href="{{path('admin')}}" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
+                                aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a></li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                            href="{{path('app_user_index')}}" aria-expanded="false">
+                            <i class="me-3 fa fa-user" aria-hidden="true"></i><span
+                                class="hide-menu">Users</span></a>
+                    </li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                            href="{{path('transactions')}}" aria-expanded="false"><i class="me-3 fa fa-table"
+                                aria-hidden="true"></i><span class="hide-menu">Transactions</span></a></li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                            href=" {{path('app_annonces_index')}} " aria-expanded="false"><i class="me-3 fa fa-font"
+                                aria-hidden="true"></i><span class="hide-menu">Annonces</span></a></li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                            href=" {{path('app_crypto_monnaie_index')}} " aria-expanded="false"><i class="me-3 fa fa-globe"
+                                aria-hidden="true"></i><span class="hide-menu">Marchés</span></a></li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                            href=" {{path('app_comptes_index')}} " aria-expanded="false"><i class="me-3 fa fa-columns"
+                                aria-hidden="true"></i><span class="hide-menu">Comptes</span></a></li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                            href=" {{path('app_taux_change_index')}} " aria-expanded="false"><i class="me-3 fa fa-info-circle"
+                                aria-hidden="true"></i><span class="hide-menu">Taux changes</span></a></li>
+                    <li class="text-center p-20 upgrade-btn">
+                        <a href="{{path('home')}}"
+                            class="btn btn-success text-white mt-4" target="_blank">Acceder au site</a>
+                    </li>
+                </ul>
+
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+</div>

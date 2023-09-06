@@ -1,19 +1,19 @@
 <header id="header" class="fixed-top" >
 	<div class="container d-flex align-items-center">
 		<h1 class="logo me-auto">
-            <img src="images/logo.png" alt="Logo du site" id="logo"/><a href="index.html">MOAYEXCHANGE</a>
+            <img src="images/logo.png" alt="Logo du site" id="logo"/><a href="/">MOAYEXCHANGE</a>
 		</h1>
 		<nav id="navbar" class="navbar">
 			<ul>
 				<li>
-					<a class="nav-link scrollto active" href="#hero">Accueil</a>
+					<a class="nav-link scrollto active" href="/">Accueil</a>
 				</li>
 				<li>
 					<a class="nav-link scrollto" href="#services">Nos Services</a>
 				</li>
-				<li>
+				<!--<li>
 					<a class="nav-link scrollto" href="#team">Equipes</a>
-				</li>
+				</li>-->
 				<li>
 					<a class="nav-link scrollto" href="#faq">FAQ</a>
 				</li>
@@ -21,11 +21,40 @@
                 <li>
                     <a class="nav-link scrollto" href="#contact">Nous Contacter</a>
                 </li>
-                <li>
-                    <a class="getstarted scrollto" href="#">Connexion</a>
+				{% if app.user %}
+				<li>
+                    <a class="getstarted scrollto" href="/deconnexion">Me déconnecter</a>
                 </li>
+					{% if app.user.roles == "ROLE_ADMIN" %}
+					<li>
+						<a class="getstarted scrollto" href="{{('admin')}}">Acceder au Backoffice</a>
+					</li>
+					{% else %}
+					<li>
+						<a class="getstarted scrollto" href="{{('profil')}}">Acceder au Backoffice</a>
+					</li>
+					{% endif %}
+				{% else %}
+				<li>
+                    <a class="getstarted scrollto" href="/connexion">Me connecter</a>
+                </li>
+				<li>
+                    <a class="getstarted scrollto" href="/inscription">M'inscrire</a>
+                </li>
+				{% endif %}
+                
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
 	    </nav><!-- .navbar -->
     </div>
+	{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="alert alert-{{ label }} alert-dismissible" role="alert">
+            <button type="button" class="btn-close" data-bs-dismis="alert" aria-label="close"></button>
+            <div class="alert-message">
+                {{ message|raw }}
+            </div>
+        </div>   
+    {% endfor %}    
+	{% endfor %}
 </header><!-- End Header -->

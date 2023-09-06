@@ -1,0 +1,15 @@
+{{ form_start(form) }}
+    <div class="row">
+        {{ form_row(form.username) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.password) }}
+        {{ form_row(form.nom) }}
+        {{ form_row(form.prenoms) }}
+        {{ form_row(form.ville) }}
+        {{ form_row(form.pays) }}
+        {{ form_row(form.date_naissance) }}
+        {{ form_row(form.id_card) }}
+        {{ form_row(form.contacts) }}
+        <button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button>
+    </div>
+{{ form_end(form) }}

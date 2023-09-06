@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> {% block title %}
+            Backoffice user
+        {% endblock %} - MOAYEXCHANGE </title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Monsterlite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Monster admin lite design, Monster admin lite dashboard bootstrap 5 dashboard template">
+        <meta name="description" content="Monster Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+        <meta name="robots" content="noindex,nofollow">
+        <link rel="canonical" href="{{path('profil')}}" />
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/Fanion_Admin.png')}}">
+        <!-- Custom CSS -->
+        <link href="{{asset('assets/plugins/chartist/dist/chartist.min.css')}}" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="{{asset('assets/css_admin/style.min.css')}}" rel="stylesheet">
+        {% block stylesheets %}{% endblock %}
+
+        {# Fichiers js #}
+         <script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="{{asset('assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{asset('assets/js/app-style-switcher.js')}}"></script>
+        <!--Wave Effects -->
+        <script src="{{asset('assets/js/waves.js')}}"></script>
+        <!--Menu sidebar -->
+        <script src="{{asset('assets/js/sidebarmenu.js')}}"></script>
+        <!--Custom JavaScript -->
+        <script src="{{asset('assets/js/custom.js')}}"></script>
+        <!--This page JavaScript -->
+        <!--flot chart-->
+        <script src="{{asset('assets/plugins/flot/jquery.flot.js')}}"></script>
+        <script src="{{asset('assets/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
+        <script src="{{asset('assets/js/pages/dashboards/dashboard1.js')}}"></script>
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+        {% include "_partiels/header.html.twig" %}
+
+        {% include '_partiels/navbar_user.html.twig' %}
+
+        {% include "_partiels/_flash.html.twig" %}
+        
+        {% block body %}{% endblock %}
+        
+        {% include "_partiels/footer.html.twig" %}
+    </body>
+</html>

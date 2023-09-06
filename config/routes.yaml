@@ -1,3 +1,55 @@
-index:
-    path: /home
+home:
+    path: /
     controller: App\Controller\HomeController::index
+
+connexion:
+    path: /connexion
+    controller: App\Controller\SecurityController::login
+
+inscription:
+    path: /inscription
+    controller: App\Controller\RegistrationController::register
+
+deconnexion:
+    path: /deconnexion
+    controller: App\Controller\SecurityController::logout
+
+verify_user:
+    path: /verif/{token}
+    controller: App\Controller\RegistrationController::verifyUser
+
+profil:
+    path: /profil
+    controller: App\Controller\ProfileController::profil
+
+resend_verif:
+    path: /renvoiverif
+    controller: App\Controller\RegistrationController::resendVerif
+
+mot_passe_oublie:
+    path: /oubli-pass
+    controller: App\Controller\SecurityController::forgottenPassword
+
+reset_pass:
+    path: /oubli-pass/{token}
+    controller: App\Controller\SecurityController::resetPass
+
+admin:
+    path: /admin
+    controller: App\Controller\Admin\AdminController::index
+
+showall:
+    path: /admin/showall
+    controller: App\Controller\Admin\AdminController::showall
+
+profil_user:
+    path: /admin/show/{id}
+    controller: App\Controller\Admin\AdminController::showuser
+
+annonces:
+    path: /admin/annonces
+    controller: App\Controller\Admin\AnnonceController::index
+
+transactions:
+    path: /admin/transactions
+    controller: App\Controller\Admin\TransactionController::index

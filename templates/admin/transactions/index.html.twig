@@ -1,0 +1,37 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+    <h2>Liste des Transactions</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Numéro de la transaction</th>
+                <th>Montant</th>
+                <th>Date et heure</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.id }}</td>
+                <td>{{ transaction.montant }}</td>
+                <td>{{ transaction.createdAt ? transaction.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_transactions_show', {'id': transaction.id}) }}">show</a>
+                    <a href="{{ path('app_transactions_edit', {'id': transaction.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_transactions_new') }}">Create new</a>
+{% endblock %}

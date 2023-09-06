@@ -1,0 +1,39 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+    <h2>Liste des Taux de Changes</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Monnaie fiduciaire</th>
+                <th>Taux actuel</th>
+                <th>CryptoMonnaie</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for taux_change in taux_changes %}
+            <tr>
+                <td>{{ taux_change.id }}</td>
+                <td>{{ taux_change.monnaieFiduciaire }}</td>
+                <td>{{ taux_change.tauxChangeNow}}</td>
+                <td>{{ taux_change.crypto.symbole}}</td>
+                <td>
+                    <a href="{{ path('app_taux_change_show', {'id': taux_change.id}) }}" class="btn btn-lg btn-cygan">Consulter</a>
+                    <a href="{{ path('app_taux_change_edit', {'id': taux_change.id}) }}" class="btn btn-lg btn-primary">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_taux_change_new') }}">Create new</a>
+{% endblock %}

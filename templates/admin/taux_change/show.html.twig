@@ -1,0 +1,30 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+    <h1>Taux de Change N°{{taux_change.id}} </h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ taux_change.id }}</td>
+            </tr>
+            <tr>
+                <th>Monnaie_fiduciaire</th>
+                <td>{{ taux_change.monnaieFiduciaire }}</td>
+            </tr>
+            <tr>
+                <th>Taux_change_now</th>
+                <td>{{ taux_change.tauxChangeNow }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_taux_change_index') }}">back to list</a>
+
+    <a href="{{ path('app_taux_change_edit', {'id': taux_change.id}) }}">edit</a>
+
+    {{ include('admin/taux_change/_delete_form.html.twig') }}
+{% endblock %}

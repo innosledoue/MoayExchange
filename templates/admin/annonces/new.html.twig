@@ -1,0 +1,27 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+    <h1>Création d'une annonce</h1>
+    <section class="container mt-2 mb-2">
+        <div class="row">
+            <div class="col-md-6 offset-3 mt-2">
+                <fieldset class="mb-3">
+                    {{ form_start(form) }}
+                        {{ form_row(form.montant_dispo) }}
+                        {{ form_row(form.prix) }}
+                        {{ form_row(form.type_annonce) }}
+                        {# {{ form_row(form.expediteur) }} #}
+                        {{ form_row(form.crypto) }}
+                        {# {{ include('transactions/_form.html.twig') }} #}
+
+                        <button class="btn btn-lg btn-success mt-2">{{ button_label|default('Enregistrer') }}</button>
+
+                        <a href="{{ path('app_annonces_index') }}" class="btn btn-lg btn-cyan mt-2">retour</a>
+                    {{ form_end(form) }}
+                </fieldset>
+            </div>
+        </div>
+    </section>
+{% endblock %}

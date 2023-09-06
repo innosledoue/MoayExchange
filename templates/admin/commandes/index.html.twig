@@ -1,0 +1,41 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+   <h2 class="card-title">Liste des commandes</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="border-top-0">Nom d'utilisateur</th>
+                <th class="border-top-0">Montant Envoyé</th>
+                <th class="border-top-0">Montant Reçu</th>
+                <th class="border-top-0">Adresse de Reception</th>
+                <th class="border-top-0">Adresse Expéditeur</th>
+                <th class="border-top-0">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commande in commandes %}
+            <tr>
+                <td>{{ commande.user.username }}</td>
+                <td>{{ commande.montantEnvoye }}</td>
+                <td>{{ commande.montantRecevoir }}</td>
+                <td>{{ commande.adresseReception }}</td>
+                <td>{{ commande.adresseEnvoyeur }}</td>
+                <td>
+                    <a href="{{ path('app_commandes_show', {'id': commande.id}) }}">show</a>
+                    <a href="{{ path('app_commandes_edit', {'id': commande.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_commandes_new') }}">Create new</a>
+{% endblock %}

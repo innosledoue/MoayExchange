@@ -1,8 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Akwaba
-{% endblock %}
-
+{% block title %}Akwaba{% endblock %}
 {% block body %}
 	<!-- ======= Hero Section ======= -->
 	<section id="hero" class="d-flex align-items-center">
@@ -13,7 +11,7 @@
 					<h1>Bienvenue sur la meilleure plateforme d'exchange de Crypto-monnaies</h1>
 					<h2>Notre équipe en ligne est disponible pour vous guider pas à pas.</h2>
 					<div class="d-flex justify-content-center justify-content-lg-start">
-						<a href="#" class="btn-get-started scrollto">Connexion</a>
+						<a href="/inscription" class="btn-get-started scrollto">s'inscrire</a>
 						<a href="#" class="glightbox btn-watch-video">
 							<i class="bi bi-play-circle"></i>
 							<span>comment ça marche ?</span>
@@ -30,6 +28,15 @@
     
 	<main id="main">
 		<!-- ======= Services Section ======= -->
+		{% if app.user and app.user.isVerified == false %}
+			<div class="alert alert-warning alert-dismissible" role="alert">
+				<button type="button" class="btn-close" data-bs-dismis="alert" aria-label="close"></button>
+				<div class="alert-message">
+					<strong>Votre compte n'est pas activé </strong>,
+					<a href=" {{path('resend_verif')}} ">renvoyer le lien d'activation</a> 
+				</div>
+			</div>
+        {% endif %}
 		<section id="services" class="services section-bg">
 			<div class="container" data-aos="fade-up">
 				<div class="section-title">
@@ -376,6 +383,21 @@
 			</div>
 		</section>
 		<!-- End Contact Section -->
+		<footer id="footer">
+			<div class="footer-newsletter">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-6">
+							<h4>Abonnement à notre Newsletter</h4>
+							<p>Abonnez-vous à notre Newsletter pour ne rien manquer.</p>
+							<form action="" method="post">
+								<input type="email" name="email"><input type="submit" value="souscrire">
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
 		<!-- ======= Clients Section ======= -->
 		<section id="clients" class="clients section-bg">
 			<div class="container">
@@ -385,27 +407,27 @@
 				<div class="row" data-aos="zoom-in">
 
 					<div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-						<img src="images/Binance-Logo.wine.png" class="img-fluid" alt="">
+						<img src="{{asset('images/Binance-Logo.wine.png')}}" class="img-fluid" alt="">
 					</div>
 
 					<div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-						<img src="images/full-gate.io-logo.png" class="img-fluid" alt="">
+						<img src="{{asset('images/full-gate.io-logo.png')}}" class="img-fluid" alt="">
 					</div>
 
 					<div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-						<img src="images/full-lbank-logo.png" class="img-fluid" alt="">
+						<img src="{{asset('images/full-lbank-logo.png')}}" class="img-fluid" alt="">
 					</div>
 
 					<div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-						<img src="images/Coinbase.svg.png" class="img-fluid" alt="">
+						<img src="{{asset('images/Coinbase.svg.png')}}" class="img-fluid" alt="">
 					</div>
 
 					<div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-						<img src="images/full-kucoin-logo.png" class="img-fluid" alt="">
+						<img src="{{asset('images/full-kucoin-logo.png')}}" class="img-fluid" alt="">
 					</div>
 
 					<div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-						<img src="images/horizontal_blue.png" class="img-fluid" alt="">
+						<img src="{{asset('images/horizontal_blue.png')}}" class="img-fluid" alt="">
 					</div>
 
 				</div>

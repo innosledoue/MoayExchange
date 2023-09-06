@@ -1,0 +1,6 @@
+{{ form_start(form) }}
+    {{ form_row(form.monnaie_fiduciaire) }}
+    {{ form_row(form.taux_change_now) }}
+    {{ form_row(form.crypto) }}
+    <button class="btn">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}
